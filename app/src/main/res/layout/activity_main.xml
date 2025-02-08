@@ -17,116 +17,123 @@
         android:title="@string/title"
         android:titleTextColor="@color/white" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/formContainer"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f2f2f2"
-        android:orientation="vertical"
-        android:padding="16dp">
-        <TextView
-            android:id="@+id/idNom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/nom"
-            android:textStyle="bold"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/editNom"
+        android:fillViewport="true"
+        >
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/formContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:layout_marginBottom="20dp"
-            android:padding="12dp"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/user"
-            android:background="@drawable/edittext_selector" />
+            android:layout_height="match_parent"
+            android:background="@color/gray3f2"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                android:id="@+id/idNom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nom"
+                android:textStyle="bold"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/idPrenom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/prenom"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/editNom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginBottom="20dp"
+                android:padding="12dp"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/user"
+                android:background="@drawable/edittext_selector" />
 
-        <EditText
-            android:id="@+id/editPrenom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:layout_marginBottom="20dp"
-            android:padding="12dp"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/user"
-            android:background="@drawable/edittext_selector" />
+            <TextView
+                android:id="@+id/idPrenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prenom"
+                android:textStyle="bold"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/idAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/age"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/editPrenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginBottom="20dp"
+                android:padding="12dp"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/user"
+                android:background="@drawable/edittext_selector" />
 
-        <EditText
-            android:id="@+id/editAge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:layout_marginBottom="20dp"
-            android:padding="12dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/edittext_selector" />
+            <TextView
+                android:id="@+id/idAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textStyle="bold"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/domComp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/domaineComp"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/editAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginBottom="20dp"
+                android:padding="12dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_selector" />
 
-        <EditText
-            android:id="@+id/editDomaine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:layout_marginBottom="20dp"
-            android:padding="12dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/edittext_selector" />
+            <TextView
+                android:id="@+id/domComp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/domaineComp"
+                android:textStyle="bold"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/numTel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/numeroTel"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/editDomaine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginBottom="20dp"
+                android:padding="12dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_selector" />
 
-        <EditText
-            android:id="@+id/editNumTel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:layout_marginBottom="20dp"
-            android:padding="12dp"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/telephone"
-            android:background="@drawable/edittext_selector" />
+            <TextView
+                android:id="@+id/numTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/numeroTel"
+                android:textStyle="bold"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/submitButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:background="@color/principale"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:text="@string/envoyer"
-            />
-    </LinearLayout>
+            <EditText
+                android:id="@+id/editNumTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginBottom="20dp"
+                android:padding="12dp"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/telephone"
+                android:background="@drawable/edittext_selector" />
 
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:text="@string/envoyer"
+                />
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">tp_37</string>
+    <string name="nom">Last Name</string>
+    <string name="prenom">Fist Name</string>
+    <string name="age">Age</string>
+    <string name="domaineComp">Area of expertise</string>
+    <string name="numeroTel">Phone number</string>
+    <string name="envoyer">Submit</string>
+    <string name="title">Personal information</string>
+</resources>
