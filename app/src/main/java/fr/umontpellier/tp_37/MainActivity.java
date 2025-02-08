@@ -1,6 +1,8 @@
 package fr.umontpellier.tp_37;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,29 +37,47 @@ public class MainActivity extends Activity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Validation des champs
-                boolean estValide = FormValidator.validerChamps(nom, prenom, age, numTel, domComp);
-
-                if (estValide) {
-                    // Récupération des valeurs des champs
-                    String nomValue = nom.getText().toString();
-                    String prenomValue = prenom.getText().toString();
-                    int ageValue = Integer.parseInt(age.getText().toString());
-                    String domCompValue = domComp.getText().toString();
-                    long numTelValue = Long.parseLong(numTel.getText().toString());
-
-                    // Affichage avec un Toast
-                    Toast.makeText(MainActivity.this,
-                            "Nom: " + nomValue + "\n" +
-                                    "Prénom: " + prenomValue + "\n" +
-                                    "Âge: " + ageValue + "\n" +
-                                    "Domaine: " + domCompValue + "\n" +
-                                    "Numéro: " + numTelValue,
-                            Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Veuillez corriger les erreurs dans le formulaire", Toast.LENGTH_SHORT).show();
-                }
+                handleAlertDialog();
             }
         });
+    }
+
+    public void handleAlertDialog() {
+        // Validation des champs
+        boolean estValide = FormValidator.validerChamps(nom, prenom, age, numTel, domComp);
+        if (estValide) {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Confirmation")
+                    .setMessage("Êtes-vous sûr de vouloir soumettre ces informations ?")
+                    .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Récupération des valeurs des champs
+                            String nomValue = nom.getText().toString();
+                            String prenomValue = prenom.getText().toString();
+                            int ageValue = Integer.parseInt(age.getText().toString());
+                            String domCompValue = domComp.getText().toString();
+                            long numTelValue = Long.parseLong(numTel.getText().toString());
+
+                            // Affichage avec un Toast
+                            Toast.makeText(MainActivity.this,
+                                    "Nom: " + nomValue + "\n" +
+                                            "Prénom: " + prenomValue + "\n" +
+                                            "Âge: " + ageValue + "\n" +
+                                            "Domaine: " + domCompValue + "\n" +
+                                            "Numéro: " + numTelValue,
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(MainActivity.this, "Validation annulée", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .show();
+        } else {
+            Toast.makeText(MainActivity.this, "Veuillez corriger les erreurs dans le formulaire", Toast.LENGTH_SHORT).show();
+        }
     }
 }
