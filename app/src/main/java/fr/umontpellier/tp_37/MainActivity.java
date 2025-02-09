@@ -3,6 +3,7 @@ package fr.umontpellier.tp_37;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +13,7 @@ import android.widget.Toast;
 import fr.umontpellier.tp_37.utils.FormValidator;
 
 public class MainActivity extends Activity {
-    EditText nom;
-    EditText prenom;
-    EditText age;
-    EditText domComp;
-    EditText numTel;
+    EditText nom, prenom, age, domComp, numTel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,21 +49,22 @@ public class MainActivity extends Activity {
                     .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            // Récupération des valeurs des champs
-                            String nomValue = nom.getText().toString();
-                            String prenomValue = prenom.getText().toString();
-                            int ageValue = Integer.parseInt(age.getText().toString());
-                            String domCompValue = domComp.getText().toString();
-                            long numTelValue = Long.parseLong(numTel.getText().toString());
-
+                            // Créer un itnent pour lancer l'activité ReceiveActivity
+                            Intent intent = new Intent(MainActivity.this, ReceiveActivity.class);
+                            intent.putExtra("nom", nom.getText().toString());
+                            intent.putExtra("prenom", prenom.getText().toString());
+                            intent.putExtra("age", age.getText().toString());
+                            intent.putExtra("domaineComp", domComp.getText().toString());
+                            intent.putExtra("numTel", numTel.getText().toString());
+                            startActivity(intent);
                             // Affichage avec un Toast
-                            Toast.makeText(MainActivity.this,
-                                    "Nom: " + nomValue + "\n" +
-                                            "Prénom: " + prenomValue + "\n" +
-                                            "Âge: " + ageValue + "\n" +
-                                            "Domaine: " + domCompValue + "\n" +
-                                            "Numéro: " + numTelValue,
-                                    Toast.LENGTH_LONG).show();
+//                            Toast.makeText(MainActivity.this,
+//                                    "Nom: " + nomValue + "\n" +
+//                                            "Prénom: " + prenomValue + "\n" +
+//                                            "Âge: " + ageValue + "\n" +
+//                                            "Domaine: " + domCompValue + "\n" +
+//                                            "Numéro: " + numTelValue,
+//                                    Toast.LENGTH_LONG).show();
                         }
                     })
                     .setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
@@ -80,4 +78,5 @@ public class MainActivity extends Activity {
             Toast.makeText(MainActivity.this, "Veuillez corriger les erreurs dans le formulaire", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

@@ -7,4 +7,5 @@
     <string name="numeroTel">Phone number</string>
     <string name="envoyer">Submit</string>
     <string name="title">Personal information</string>
+    <string name="titlePhonePage">Phone</string>
 </resources>
