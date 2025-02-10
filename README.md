@@ -1,10 +1,7 @@
 # android_java_tp37
-## Demo Exo6
+## Demo Exo7
 
 
 
-https://github.com/user-attachments/assets/46afa2b2-2c07-4498-b229-26a2d7991fe4
+https://github.com/user-attachments/assets/f464f73a-cfd8-4191-8b8e-1e3db88806a4
 
-<img src="demo/demo6.1.png" />
-<img src="demo/demo6.2.png"/>
-<img src="demo/demo6.3.png"/>
