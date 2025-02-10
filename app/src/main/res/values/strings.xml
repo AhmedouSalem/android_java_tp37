@@ -8,4 +8,11 @@
     <string name="envoyer">Envoyer</string>
     <string name="title">Information personnelle</string>
     <string name="titlePhonePage">Téléphone</string>
+    <string name="back">Retour</string>
+    <string name="ok">D\'accord</string>
+    <string name="yes">Oui</string>
+    <string name="cancel">Annuler</string>
+    <string name="call">Appeler</string>
+    <string name="confirmationTitle">Confirmation</string>
+    <string name="confirmationMessage">Êtes-vous sûr de vouloir soumettre ces informations ?</string>
 </resources>

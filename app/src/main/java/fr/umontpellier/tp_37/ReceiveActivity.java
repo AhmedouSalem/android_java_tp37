@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class ReceiveActivity extends Activity {
     TextView textViewNom, textViewPrenom, textViewAge, textViewDomaine, textViewNumTel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,20 +31,22 @@ public class ReceiveActivity extends Activity {
         String numTel = intent.getStringExtra("numTel");
 
         // Afficher les données dans les TextView
-        textViewNom.setText("Nom: " + nom);
-        textViewPrenom.setText("Prénom: " + prenom);
-        textViewAge.setText("Âge: " + age);
-        textViewDomaine.setText("Domaine de compétences: " + domaineComp);
-        textViewNumTel.setText("Numéro: " + numTel);
+        textViewNom.setText(String.format("%s: %s", getString(R.string.nom), nom));
+        textViewPrenom.setText(String.format("%s: %s", getString(R.string.prenom), prenom));
+        textViewAge.setText(String.format("%s: %s", getString(R.string.age), age));
+        textViewDomaine.setText(String.format("%s: %s", getString(R.string.domaineComp), domaineComp));
+        textViewNumTel.setText(String.format("%s: %s", getString(R.string.numeroTel), numTel));
 
-        // Créer les boutons
+        // Recupérer les buttons
         Button btnOk = findViewById(R.id.btnOk);
         Button btnRetour = findViewById(R.id.btnRetour);
 
+        // configurer les buttons
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ReceiveActivity.this, CallActivity.class);
+                intent.putExtra("numTel", numTel);
                 startActivity(intent);
             }
         });

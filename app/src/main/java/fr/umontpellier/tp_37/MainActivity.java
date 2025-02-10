@@ -44,9 +44,9 @@ public class MainActivity extends Activity {
         boolean estValide = FormValidator.validerChamps(nom, prenom, age, numTel, domComp);
         if (estValide) {
             new AlertDialog.Builder(MainActivity.this)
-                    .setTitle("Confirmation")
-                    .setMessage("Êtes-vous sûr de vouloir soumettre ces informations ?")
-                    .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                    .setTitle(R.string.confirmationTitle)
+                    .setMessage(R.string.confirmationMessage)
+                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // Créer un itnent pour lancer l'activité ReceiveActivity
@@ -57,17 +57,9 @@ public class MainActivity extends Activity {
                             intent.putExtra("domaineComp", domComp.getText().toString());
                             intent.putExtra("numTel", numTel.getText().toString());
                             startActivity(intent);
-                            // Affichage avec un Toast
-//                            Toast.makeText(MainActivity.this,
-//                                    "Nom: " + nomValue + "\n" +
-//                                            "Prénom: " + prenomValue + "\n" +
-//                                            "Âge: " + ageValue + "\n" +
-//                                            "Domaine: " + domCompValue + "\n" +
-//                                            "Numéro: " + numTelValue,
-//                                    Toast.LENGTH_LONG).show();
                         }
                     })
-                    .setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(MainActivity.this, "Validation annulée", Toast.LENGTH_SHORT).show();
